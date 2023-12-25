@@ -1,11 +1,7 @@
-public class Ex2 {
+public class Ex5 {
     public static void main(String[] args) {
-        ComplexNumber c1 = new ComplexNumber();
-        ComplexNumber c2 = new ComplexNumber();
-        c1.setRealPart(3);
-        c1.setImgPart(5);
-        c2.setRealPart(-2);
-        c2.setImgPart(4);
+        ComplexNumber c1 = new ComplexNumber(3, 5);
+        ComplexNumber c2 = new ComplexNumber(-2, 4);
         ComplexNumberOperations.additionOfComplexNumbers(c1, c2);
         System.out.println();
         ComplexNumberOperations.multiplicationOfComplexNumbers(c1, c2);
@@ -14,6 +10,12 @@ public class Ex2 {
 }
 
 class ComplexNumber {
+    ComplexNumber(int realPart, int imgPart) {
+        this.imgPart = imgPart;
+        this.realPart = realPart;
+    }
+
+
     private int realPart;
     public int getRealPart() {
         return realPart;
@@ -73,4 +75,4 @@ class ComplexNumberOperations {
                         + c2ImgPart + ")");
         System.out.println("Result of Multiplication operation :- " + realPartResult + " + i(" + imgPartResult + ")");
     }
-}
+}    
